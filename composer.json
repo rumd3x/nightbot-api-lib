@@ -1,0 +1,25 @@
+{
+    "name": "rumd3x/nightbot-api-lib",
+    "description": "A PHP wrapper for Nightbot's Web API.",
+    "type": "library",
+    "keywords": ["nightbot"],
+    "license": "MIT",
+    "homepage": "https://github.com/rumd3x/nightbot-api-lib",
+    "authors": [
+        {
+            "name": "rumd3x",
+            "email": "edmurcardoso@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Rumd3x\\NightbotAPI\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "^6.3",
+        "tightenco/collect": "^5.8",
+        "league/oauth2-client": "^2.6"
+    }
+}
