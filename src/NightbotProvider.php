@@ -17,7 +17,7 @@ class NightbotProvider extends GenericProvider {
             'redirectUri'             => $redirectUrl,
             'urlAuthorize'            => 'https://api.nightbot.tv/oauth2/authorize',
             'urlAccessToken'          => 'https://api.nightbot.tv/oauth2/token',
-            'urlResourceOwnerDetails' => null,
+            'urlResourceOwnerDetails' => 'https://api.nightbot.tv/1/me',
         ]);
     }
 }

@@ -35,7 +35,9 @@ if (!isset($_GET['code'])) {
     ]);    
 
     $api = new NightbotAPI($accessToken);
-    $api->sendChannelMessage('Hello Gamers!');
+    $me = $api->me();
+
+    print_r($me);
 
     echo 'Access Token: ' . $accessToken->getToken() . "<br>";
     echo 'Refresh Token: ' . $accessToken->getRefreshToken() . "<br>";
@@ -50,6 +52,11 @@ if (!isset($_GET['code'])) {
 Refreshing Tokens
 
 ```php
+    use Rumd3x\NightbotAPI\NightbotAPI;
+    use Rumd3x\NightbotAPI\NightbotProvider;
+
+    $provider = new NightbotProvider('CLIENT_ID','CLIENT_SECRET','REDIRECT_URL');
+
     $refreshToken = getAccessTokenFromYourDataStore();
 
     $newAccessToken = $provider->getAccessToken('refresh_token', [
@@ -57,7 +64,7 @@ Refreshing Tokens
     ]);
 
     $api = new NightbotAPI($newAccessToken);
-    $api->sendChannelMessage('Hello Gamers!');
+    $api->sendChatMessage('Hello Gamers!');
 
     echo 'Access Token: ' . $newAccessToken->getToken() . "<br>";
     echo 'Refresh Token: ' . $newAccessToken->getRefreshToken() . "<br>";

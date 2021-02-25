@@ -8,7 +8,7 @@ use League\OAuth2\Client\Token\AccessTokenInterface;
 
 abstract class NightbotAPIAbstract extends Client implements ClientInterface {
 
-    const BASE_URL = "https://api.nightbot.tv/1/";
+    const BASE_URL = "https://api.nightbot.tv/";
 
     /**
      * Oauth2 Provider
@@ -36,7 +36,7 @@ abstract class NightbotAPIAbstract extends Client implements ClientInterface {
                 'Authorization' => "Bearer {$this->getAccessToken()}",
             ],
         ]);
-        return json_decode($response->getBody()->getContents());
+        return json_decode($response->getBody()->getContents(), true);
     }
 
     protected function doPost(string $url, array $data)
@@ -48,6 +48,6 @@ abstract class NightbotAPIAbstract extends Client implements ClientInterface {
             ],
         ]);
 
-        return json_decode($response->getBody()->getContents());
+        return json_decode($response->getBody()->getContents(), true);
     }
 }

@@ -20,6 +20,7 @@
         "php": ">=7.0",
         "guzzlehttp/guzzle": "^6.3",
         "tightenco/collect": "^5.8",
-        "league/oauth2-client": "^2.6"
+        "league/oauth2-client": "^2.6",
+        "nesbot/carbon": "^2.45"
     }
 }
