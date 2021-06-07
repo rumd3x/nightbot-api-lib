@@ -50,4 +50,27 @@ abstract class NightbotAPIAbstract extends Client implements ClientInterface {
 
         return json_decode($response->getBody()->getContents(), true);
     }
+
+    protected function doPut(string $url, array $data)
+    {
+        $response = $this->put($url, [
+            'form_params' => $data,
+            'headers' => [
+                'Authorization' => "Bearer {$this->getAccessToken()}",
+            ],
+        ]);
+
+        return json_decode($response->getBody()->getContents(), true);
+    }
+
+    protected function doDelete(string $url)
+    {
+        $response = $this->delete($url, [
+            'headers' => [
+                'Authorization' => "Bearer {$this->getAccessToken()}",
+            ],
+        ]);
+
+        return json_decode($response->getBody()->getContents(), true);
+    }
 }

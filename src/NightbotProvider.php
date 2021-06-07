@@ -18,6 +18,7 @@ class NightbotProvider extends GenericProvider {
             'urlAuthorize'            => 'https://api.nightbot.tv/oauth2/authorize',
             'urlAccessToken'          => 'https://api.nightbot.tv/oauth2/token',
             'urlResourceOwnerDetails' => 'https://api.nightbot.tv/1/me',
+            'scopeSeparator'          => ' ',
         ]);
     }
 }
